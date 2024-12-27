@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Portfolio</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Verdana', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background: transparent;
+    color: black;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+    height: 80px;
+}
+
+.navbar.scrolled {
+    background: #d1eafc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #488fc6;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 55px;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            color: #488fc6;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 50px;
+            transition: background 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background: #ffffff;
+        }
+
+        .social-icons {
+display: flex;
+gap: 15px;
+}
+
+.social-icons a {
+text-decoration: none;
+background-color: #488fc6; /* Yellow circle background */
+color: #ffffff; /* White emoji color */
+padding: 15px; /* Adjusted padding for round shape */
+border-radius: 10%; /* Circular shape */
+font-size: 1.5rem; /* Adjust the size of the emoji */
+display: flex;
+align-items: center;
+justify-content: center;
+width: 50px; /* Set width for consistent circle size */
+height: 50px; /* Set height for consistent circle size */
+transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+transform: scale(1.1); /* Hover effect */
+}
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            height: 100vh;
+            background: linear-gradient(to right, #ffffff, #ffffff);
+            color: #488fc6;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .hero .btn {
+            background: white;
+            color: #4CAF50;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .hero .btn:hover {
+            background: #45a049;
+            color: white;
+        }
+
+        .home-image img {
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    margin-left: 100px;
+}
+        
+
+        #about {
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 50px;
+height: 500px;
+background-color: #f2f9ff; /* Background color for the About section */
+}
+
+.about-content {
+display: flex;
+align-items: center;
+justify-content: space-between;
+max-width: 1200px;
+width: 100%;
+gap: 50px;
+}
+
+.about-text {
+max-width: 600px;
+flex: 1;
+font-size: 1.2rem;
+color: #2b2b2b;
+}
+
+.about-text h2 {
+font-size: 2rem;
+margin-bottom: 20px;
+color: #488fc6;
+justify-items: center;
+
+}
+
+.about-text p {
+line-height: 1.8;
+width: 500px;
+color: #555;
+font-weight: 500;
+font-size: 18px;
+}
+
+.about-image {
+flex: 1;
+display: flex;
+justify-content: flex-end;
+}
+
+.about-image img {
+border-radius: 10px;
+max-width: 100%;
+height: auto;
+width: 430px; /* Set a specific width for the image */
+padding-top: 70px;
+}
+
+        /* Skills Section */
+        .skills {
+            padding: 50px 20px;
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .skills h2 {
+            font-size: 2rem;
+            color: #488fc6;
+            margin-bottom: 20px;
+        }
+
+        .skills .skill-set {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .skills .skill {
+            background: white;
+            padding: 20px;
+            border-radius: 50px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 0.9rem;
+            text-align: center; /* Aligns the text horizontally */
+            display: flex; /* Enables flexbox for better alignment control */
+            justify-content: center; /* Centers content horizontally */
+            align-items: center; /* Centers content vertically */          
+            height: 30px;
+            cursor: pointer;
+            color: #488fc6;
+        }
+
+        /* language Section */
+        .language {
+            padding: 50px 20px;
+            background: #f2f9ff;
+            text-align: center;
+        }
+
+        .language h2 {
+            font-size: 2rem;
+            color: #488fc6;
+            margin-bottom: 20px;
+        }
+
+        .language .language-set {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .language .language {
+            background: white;
+            padding: 20px;
+            border-radius: 50px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 0.9rem;
+            color: #488fc6;
+            text-align: center; /* Aligns the text horizontally */
+            display: flex; /* Enables flexbox for better alignment control */
+            justify-content: center; /* Centers content horizontally */
+            align-items: center; /* Centers content vertically */          
+            height: 30px;
+            cursor: pointer;
+        }
+
+
+        /* Contact Section */
+        .contact {
+            padding: 50px 20px;
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            color: #488fc6;
+            margin-bottom: 20px;
+        }
+
+        .contact form {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact .form-group {
+            margin-bottom: 15px;
+        }
+
+        .contact label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact button {
+            background: #7bb9e9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .contact button:hover {
+            background: #488fc6;
+        }
+
+        footer {
+background-color: #488fc6; /* Dark background for the footer */
+color: #32cf74;
+padding: 10px;
+text-align: center;
+}
+
+.footer-content {
+display: flex;
+justify-content: space-between; /* Distribute content between left and center */
+align-items: center;
+padding: 0 20px;
+}
+
+.footer-message {
+font-size: 1rem;
+color: #ffffff; /* White color for the message */
+text-align: center;
+flex-grow: 1; /* Ensures the message stays in the center */
+margin-left: -300px; /* Center adjust manually (update this if needed) */
+}
+
+/* Footer-specific social icons */
+.footer-social-icons a {
+color: white; /* Icon color */
+font-size: 1.5rem; /* Adjust size as needed */
+text-decoration: none; /* Remove underline */
+background-color: transparent; /* No background */
+border-radius: 0; /* Remove circular shape */
+padding: 0; /* No padding around icons */
+margin: 0 10px; /* Space between icons */
+transition: transform 0.3s ease; /* Hover effect */
+}
+
+.footer-social-icons a:hover {
+transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">Smriti Maharjan</div>
+        <ul class="nav-links">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div>
+            <h1>Hi, I'm Smriti Maharjan</h1>
+            <p>A creative individual passionate about Digital Marketing and SEO.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/amar-shrestha-a7b2b8247/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/xrestha.amar" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="mailto:mhznsmriti@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+        </div>
+        </div>
+
+        <div class="home-image">
+            <img src="C:\Users\uSer\Downloads\home.png" alt="Profile Image">
+        </div>
+    </section>
+
+
+    <section id="about">
+        <div class="about-content">
+            <!-- Text Content -->
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>As a Junior SEO-Digital Marketing Analyst, my BBA education provides a strong business foundation for technical skills. I'm skilled in on-page SEO, keyword research, and digital content strategy, aiming to improve search engine visibility and drive growth. I'm passionate about staying up-to-date with industry trends and leveraging the latest techniques to achieve impactful results.</p>
+            </div>
+            
+            <!-- Profile Image -->
+            <div class="about-image">
+                <img src="C:\Users\uSer\Desktop\1726544661238.png" alt="Profile Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2>My Skills</h2>
+        <div class="skill-set">
+            <div class="skill">Link Building</div>
+            <div class="skill">Digital Marketing</div>
+            <div class="skill">Banner Designing</div>
+            <div class="skill">Off-Page SEO</div>
+            <div class="skill">XML Sitemaps</div>
+            <div class="skill">On-Page SEO</div>
+            <div class="skill">Keyword Research</div>
+            <div class="skill">Records Management</div>
+            <div class="skill">Documentation</div>
+            <div class="skill">Analytical Skills</div>
+            <div class="skill">Customer Service</div>
+            <div class="skill">E-Commerce</div>
+            <div class="skill">Canva</div>
+            <div class="skill">Volunteering</div>
+            <div class="skill">Microsoft Excel</div>
+            <div class="skill">Microsoft Word</div>
+            <div class="skill">Time Management</div>
+            <div class="skill">Microsoft PowerPoint</div>
+            <div class="skill">Event Photography</div>
+            <div class="skill">Adobe Photoshop</div>
+            
+        </div>
+    </section>
+
+    <section class="language" id="language">
+        <h2>Languages I know</h2>
+        <div class="language-set">
+            <div class="language">English</div>
+            <div class="language">Nepali</div>
+            <div class="language">Nepal Bhasa</div>
+            <div class="language">Hindi</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Your Email">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <script>
+                // Change navbar style on scroll
+                const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+    </script>
+</body>
+    <!-- Footer -->
+
+        <footer>
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/amar-shrestha-a7b2b8247/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/xrestha.amar" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="mailto:mhznsmriti@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+            </div>
+                <p class="footer-message">Made by SM</p>
+            </div>
+        </footer>
+</html>
