@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <title>Portfolio</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <title>Smriti Maharjan | SEO | Digital Marketing </title>
     <style>
         /* General Reset */
         * {
@@ -21,6 +21,7 @@
             background-color: #f4f4f4;
             overflow-x: hidden;
         }
+
 
         /* Navbar */
         .navbar {
@@ -47,7 +48,7 @@
         .navbar .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #488fc6;
+            color: #00bcd4;
         }
 
         .navbar ul {
@@ -61,7 +62,7 @@
         }
 
         .navbar ul li a {
-            color: #488fc6;
+            color: #00bcd4;
             text-decoration: none;
             padding: 8px 15px;
             border-radius: 50px;
@@ -79,7 +80,7 @@ gap: 15px;
 
 .social-icons a {
 text-decoration: none;
-background-color: #488fc6; /* Yellow circle background */
+background-color: #00bcd4; /* Yellow circle background */
 color: #ffffff; /* White emoji color */
 padding: 15px; /* Adjusted padding for round shape */
 border-radius: 10%; /* Circular shape */
@@ -96,50 +97,55 @@ transition: transform 0.3s ease;
 transform: scale(1.1); /* Hover effect */
 }
 
-        /* Hero Section */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            height: 100vh;
-            background: linear-gradient(to right, #ffffff, #ffffff);
-            color: #488fc6;
-            text-align: center;
-            padding: 50px;
-        }
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+    height: 100vh;
+    background: linear-gradient(to right, #ffffff, #ffffff);
+    color: #00bcd4;
+    text-align: center;
+    padding: 50px;
+    flex-wrap: wrap; /* Ensure proper spacing for smaller screens */
+}
 
-        .hero h1 {
-            font-size: 3rem;
-        }
+.hero h1 {
+    font-size: 3rem;
+}
 
-        .hero p {
-            font-size: 1.2rem;
-            margin: 20px 0;
-        }
+.hero p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
 
-        .hero .btn {
-            background: white;
-            color: #4CAF50;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+.hero .btn {
+    background: white;
+    color: #4CAF50;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
 
-        .hero .btn:hover {
-            background: #45a049;
-            color: white;
-        }
+.hero .btn:hover {
+    background: #45a049;
+    color: white;
+}
 
-        .home-image img {
+.home-image {
+    margin-left: 100px; /* Reduce left margin */
+}
+
+.home-image img {
     border-radius: 10px;
     max-width: 400px;
     width: 100%;
     height: auto;
-    margin-left: 100px;
 }
+
         
 
         #about {
@@ -149,6 +155,7 @@ justify-content: center;
 padding: 50px;
 height: 500px;
 background-color: #f2f9ff; /* Background color for the About section */
+scroll-margin-top: 40px; /* Same as navbar height */
 }
 
 .about-content {
@@ -157,7 +164,8 @@ align-items: center;
 justify-content: space-between;
 max-width: 1200px;
 width: 100%;
-gap: 50px;
+margin-left: 30px;
+gap: 20px;
 }
 
 .about-text {
@@ -170,7 +178,7 @@ color: #2b2b2b;
 .about-text h2 {
 font-size: 2rem;
 margin-bottom: 20px;
-color: #488fc6;
+color: #00bcd4;
 justify-items: center;
 
 }
@@ -193,8 +201,8 @@ justify-content: flex-end;
 border-radius: 10px;
 max-width: 100%;
 height: auto;
-width: 430px; /* Set a specific width for the image */
-padding-top: 70px;
+width: 400px; /* Set a specific width for the image */
+padding-top: 100px;
 }
 
         /* Skills Section */
@@ -202,11 +210,13 @@ padding-top: 70px;
             padding: 50px 20px;
             background: #ffffff;
             text-align: center;
+            scroll-margin-top: 60px; /* Same as navbar height */
+
         }
 
         .skills h2 {
             font-size: 2rem;
-            color: #488fc6;
+            color: #00bcd4;
             margin-bottom: 20px;
         }
 
@@ -230,7 +240,7 @@ padding-top: 70px;
             align-items: center; /* Centers content vertically */          
             height: 30px;
             cursor: pointer;
-            color: #488fc6;
+            color: #00bcd4;
         }
 
         /* language Section */
@@ -242,7 +252,7 @@ padding-top: 70px;
 
         .language h2 {
             font-size: 2rem;
-            color: #488fc6;
+            color: #00bcd4;
             margin-bottom: 20px;
         }
 
@@ -260,7 +270,7 @@ padding-top: 70px;
             border-radius: 50px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             font-size: 0.9rem;
-            color: #488fc6;
+            color: #00bcd4;
             text-align: center; /* Aligns the text horizontally */
             display: flex; /* Enables flexbox for better alignment control */
             justify-content: center; /* Centers content horizontally */
@@ -268,6 +278,164 @@ padding-top: 70px;
             height: 30px;
             cursor: pointer;
         }
+
+        #education {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the cards horizontally */
+    background: #f2f9ff;
+    scroll-margin-top: 60px; /* Same as navbar height */
+}
+
+#education h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #00bcd4;
+    font-size: 2rem;
+}
+
+.education-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    max-width: 600px; /* Restricts the card width */
+    width: 100%; /* Ensures cards are responsive */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.education-info {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.education-card h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #00bcd4;
+}
+
+.education-card .degree {
+    font-style: italic;
+    margin: 5px 0;
+    color: #00bcd4;
+}
+
+.education-card .dates {
+    font-weight: bold;
+    margin: 5px 0;
+    color: #00bcd4;
+}
+
+.education-card .description {
+    margin-top: 10px;
+    color: #000000;
+    line-height: 1.5;
+}
+
+.education-logo {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 4px solid #00bcd4;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.education-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Experience Section Styles */
+#experience {
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the cards horizontally */
+    scroll-margin-top: 60px; /* Same as navbar height */
+}
+
+#experience h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #00bcd4;
+    font-size: 2rem;
+    margin-top: 50px;
+}
+
+.experience-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+    flex-wrap: wrap;
+}
+
+.experience-card {
+    width: 600px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+
+/* Header Styling for Title, Company, Dates, and Logo */
+.experience-header {
+    display: flex;
+    justify-content: space-between; /* Space out text and logo */
+    align-items: center; /* Align logo with the text */
+    margin-bottom: 10px;
+}
+
+.experience-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #00bcd4;
+}
+
+.experience-header .company {
+    font-style: italic;
+    margin: 2px 0;
+    color: #00bcd4;
+}
+
+.experience-header .dates {
+    font-weight: bold;
+    margin: 0;
+    color: #00bcd4;
+}
+
+.experience-details {
+list-style-type: disc;
+color: #000000;
+line-height: 1.8;
+font-size: 0.95rem;
+padding-left: 20px;
+}
+
+/* Logo Styling */
+.experience-logo img {
+    width: 100px; /* Fixed width */
+    height: 100px; /* Fixed height */
+    border-radius: 50%; /* Circular shape */
+    border: 4px solid #00bcd4; /* Circular border */
+    object-fit: cover; /* Ensures proper image scaling */
+    margin-right: 15px;
+}
 
 
         /* Contact Section */
@@ -279,7 +447,7 @@ padding-top: 70px;
 
         .contact h2 {
             font-size: 2rem;
-            color: #488fc6;
+            color: #00bcd4;
             margin-bottom: 20px;
         }
 
@@ -308,7 +476,7 @@ padding-top: 70px;
         }
 
         .contact button {
-            background: #7bb9e9;
+            background: #66cbd8;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -318,45 +486,47 @@ padding-top: 70px;
         }
 
         .contact button:hover {
-            background: #488fc6;
+            background: #00bcd4;
         }
 
         footer {
-background-color: #488fc6; /* Dark background for the footer */
-color: #32cf74;
-padding: 10px;
-text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #00bcd4;
+    color: white;
 }
 
-.footer-content {
-display: flex;
-justify-content: space-between; /* Distribute content between left and center */
-align-items: center;
-padding: 0 20px;
+.footer-left a,
+.footer-right button {
+    margin: 0 20px;
 }
 
-.footer-message {
-font-size: 1rem;
-color: #ffffff; /* White color for the message */
-text-align: center;
-flex-grow: 1; /* Ensures the message stays in the center */
-margin-left: -300px; /* Center adjust manually (update this if needed) */
+.social-icon {
+    font-size: 24px;
+    color: white;
 }
 
-/* Footer-specific social icons */
-.footer-social-icons a {
-color: white; /* Icon color */
-font-size: 1.5rem; /* Adjust size as needed */
-text-decoration: none; /* Remove underline */
-background-color: transparent; /* No background */
-border-radius: 0; /* Remove circular shape */
-padding: 0; /* No padding around icons */
-margin: 0 10px; /* Space between icons */
-transition: transform 0.3s ease; /* Hover effect */
+.social-icon:hover {
+    color: #cef9ff;
 }
 
-.footer-social-icons a:hover {
-transform: scale(1.1); /* Slightly enlarge on hover */
+.footer-center {
+    text-align: center;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border: none;
+    color: #00bcd4;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: #cef9ff;
 }
 
 
@@ -371,6 +541,8 @@ transform: scale(1.1); /* Slightly enlarge on hover */
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -381,14 +553,14 @@ transform: scale(1.1); /* Slightly enlarge on hover */
             <h1>Hi, I'm Smriti Maharjan</h1>
             <p>A creative individual passionate about Digital Marketing and SEO.</p>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/amar-shrestha-a7b2b8247/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.facebook.com/xrestha.amar" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/smriti-maharjan-/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/mhzn.smritee" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a href="mailto:mhznsmriti@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
         </div>
         </div>
 
         <div class="home-image">
-            <img src="home img.png" alt="Profile Image">
+            <img src="homeimg.png" alt="Profile Image">
         </div>
     </section>
 
@@ -403,7 +575,7 @@ transform: scale(1.1); /* Slightly enlarge on hover */
             
             <!-- Profile Image -->
             <div class="about-image">
-                <img src="1726544661238.png" alt="Profile Image">
+                <img src="about.png" alt="Profile Image">
             </div>
         </div>
     </section>
@@ -446,6 +618,87 @@ transform: scale(1.1); /* Slightly enlarge on hover */
         </div>
     </section>
 
+    <section class="experience" id="experience">
+        <h1>Experience</h1>
+        <div class="experience-container">
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <h2>SEO and Digital Marketing</h2>
+                        <p class="company">Searchable Design Pvt. Ltd.</p>
+                        <p class="dates">Feb 2024 - Present</p>
+                    </div>
+                    <div class="experience-logo">
+                        <img src="searchabledesign_logo.jpg" alt="Company 1 Logo">
+                    </div>
+                </div>
+                <ul class="experience-details">
+                <li>Performed Keyword Research for multiple domains.</li>
+                <li>Enhanced the Social Media- Facebook and LinkedIn profile.</li>
+                <li>Created banners and posted on social media to enhance presence.</li>
+                <li>Compiled reports on performance using various analytical tools.</li>
+                <li>Performed SEO- on page, off page, technical for multiple domains.</li>
+            </div>
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <h2>Admin Lead</h2>
+                        <p class="company">Mathema Learning Resource Center | Prime College</p>
+                        <p class="dates">July 2022 - April 2023</p>
+                    </div>
+                    <div class="experience-logo">
+                        <img src="MLRC.png" alt="Company 2 Logo">
+                    </div>
+                </div>
+                <ul class="experience-details">
+                    <li>Facilitated event registrations to students.</li>
+                    <li>Executed videography and photography coverage for events.</li>
+                    <li>Maintained the calendar, optimizing scheduling for events.</li>
+                    <li>Designed captivating flyers to promote and increase attendance.</li>
+                    <li>Managed library operations for the smooth functioning of resources.</li>
+
+            </ul>
+        </div>
+        </div>
+    </section>
+
+    <section class= "education" id="education">
+        <h1>Education</h1>
+        <div class="education-card">
+            <div class="education-info">
+                <h2>Prime College</h2>
+                <p class="degree">Bachelor of Business Administration (BBA)</p>
+                <p class="dates">2019 - 2024</p>
+                <p class="description">Specialized in Marketing.</p>
+            </div>
+            <div class="education-logo">
+                <img src="Prime.png" alt="Institution 1 Logo">
+            </div>
+        </div>
+        <div class="education-card">
+            <div class="education-info">
+                <h2>Global College of Management</h2>
+                <p class="degree">Higher Education Examination</p>
+                <p class="dates">2017 - 2019</p>
+                <p class="description">Focused on Business Management.</p>
+            </div>
+            <div class="education-logo">
+                <img src="gcm-img.png" alt="Institution 2 Logo">
+            </div>
+        </div>
+        <div class="education-card">
+            <div class="education-info">
+                <h2>DAV School</h2>
+                <p class="degree">Secondary Education Examination</p>
+                <p class="dates">2017</p>
+                <p class="description">Completed schooling education.</p>
+            </div>
+            <div class="education-logo">
+                <img src="dav.png" alt="Institution 3 Logo">
+            </div>
+        </div> 
+    </section>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2>Contact Me</h2>
@@ -471,24 +724,46 @@ transform: scale(1.1); /* Slightly enlarge on hover */
                 const navbar = document.getElementById('navbar');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 100) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
 });
-    </script>
-</body>
-    <!-- Footer -->
 
-        <footer>
-            <div class="footer-content">
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/amar-shrestha-a7b2b8247/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.facebook.com/xrestha.amar" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="mailto:mhznsmriti@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
-            </div>
-                <p class="footer-message">Made by SM</p>
-            </div>
-        </footer>
+// Select all anchor elements that link to an ID (i.e., #hero, #about, etc.)
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+  // Add a click event listener to each link
+  anchor.addEventListener('click', function (e) {
+    // Prevent the default action (which would jump immediately to the section)
+    e.preventDefault();
+    
+    // Use scrollIntoView() to scroll smoothly to the target element
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth', // Smooth scroll
+      block: 'start' // Align the section at the top of the viewport
+    });
+  });
+});
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+    </script> 
+<footer>
+    <div class="footer-left">
+        <a href="https://www.linkedin.com/in/smriti-maharjan-/" target="_blank"><i class="fab fa-linkedin social-icon"></i></a>
+        <a href="https://www.facebook.com/mhzn.smritee" target="_blank"><i class="fab fa-facebook social-icon"></i></a>
+        <a href="mailto:mhznsmriti@gmail.com" target="_blank"><i class="fa fa-envelope social-icon"></i></a>
+    </div>
+    <div class="footer-center">
+        <p>Made by SM@2025</p>
+    </div>
+    <div class="footer-right">
+        <button onclick="scrollToTop()">Scroll to Top</button>
+    </div>
+</footer>
+
+</body>
 </html>
