@@ -18,7 +18,7 @@
             font-family: 'Verdana', sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f4f4f4;
+            background: linear-gradient(to right, #d9efff, #f9fcff);
             overflow-x: hidden;
         }
 
@@ -42,19 +42,19 @@
 
 .navbar.scrolled {
     background: #d1eafc;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
 }
 
-        .navbar .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #00bcd4;
+        .navbar .logo img{
+            width: 100%;
+            height: 50px;
+            margin-left: 10px;
         }
 
         .navbar ul {
             list-style: none;
             display: flex;
-            gap: 55px;
+            gap: 50px;
         }
 
         .navbar ul li {
@@ -62,16 +62,26 @@
         }
 
         .navbar ul li a {
-            color: #00bcd4;
-            text-decoration: none;
-            padding: 8px 15px;
-            border-radius: 50px;
-            transition: background 0.3s;
-        }
+    color: #00bcd4;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 50px;
+    transition: background 0.3s;
+}
 
-        .navbar ul li a:hover {
-            background: #ffffff;
-        }
+/* Hover effect for the active navbar item */
+.navbar ul li a:hover {
+    background: #ffffff;
+    color: #00bcd4; /* You can adjust the color */
+}
+
+/* Highlight active link */
+.navbar ul li a.active {
+    background: #ffffff;
+    color: #00bcd4;
+}
+
 
         .social-icons {
 display: flex;
@@ -108,6 +118,12 @@ transform: scale(1.1); /* Hover effect */
     text-align: center;
     padding: 50px;
     flex-wrap: wrap; /* Ensure proper spacing for smaller screens */
+    background-image: url("home-imgg.png"); /* Specify the image */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-size: 65% 100%;
+    display: flex; /* Use flexbox for easy content alignment */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
 
 .hero h1 {
@@ -145,8 +161,6 @@ transform: scale(1.1); /* Hover effect */
     width: 100%;
     height: auto;
 }
-
-        
 
         #about {
 display: flex;
@@ -243,7 +257,7 @@ padding-top: 100px;
             color: #00bcd4;
         }
 
-              /* language Section */
+        /* language Section */
         .language {
             padding: 50px 20px;
             background: #f2f9ff;
@@ -311,7 +325,6 @@ padding-top: 100px;
             width: 300px;
             height: 100%;
         }
-
 
         #education {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -569,9 +582,8 @@ button:hover {
 <body>
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
-        <div class="logo">Smriti Maharjan</div>
+        <div class="logo"><img src="SM-logo-white-bg.png"></div>
         <ul class="nav-links">
-        <ul>
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -583,13 +595,15 @@ button:hover {
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
+        <div class="home-image-1">
+        </div>
         <div>
             <h1>Hi, I'm Smriti Maharjan</h1>
             <p>A creative individual passionate about Digital Marketing and SEO.</p>
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/smriti-maharjan-/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="https://www.facebook.com/mhzn.smritee" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="mailto:mhznsmriti@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+                <a href="mailto:smritimaharjan112@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
         </div>
         </div>
 
@@ -638,10 +652,7 @@ button:hover {
             <div class="skill">Microsoft PowerPoint</div>
             <div class="skill">Event Photography</div>
             <div class="skill">Adobe Photoshop</div>
-            <div class="skill">Hubspot</div>
-            <div class="skill">Video Editing</div>
-            <div class="skill">Google Analytics</div>
-            <div class="skill">Google Webmaster</div>
+            
         </div>
     </section>
 
@@ -675,7 +686,7 @@ button:hover {
                     <div>
                         <h2>SEO and Digital Marketing</h2>
                         <p class="company">Searchable Design Pvt. Ltd.</p>
-                        <p class="dates">February 2024 - Present</p>
+                        <p class="dates">Feb 2024 - Present</p>
                     </div>
                     <div class="experience-logo">
                         <img src="searchabledesign_logo.jpg" alt="Company 1 Logo">
@@ -740,7 +751,7 @@ button:hover {
                 <h2>DAV School</h2>
                 <p class="degree">Secondary Education Examination</p>
                 <p class="dates">2017</p>
-                <p class="description">Completed Schooling Education.</p>
+                <p class="description">Completed schooling education.</p>
             </div>
             <div class="education-logo">
                 <img src="dav.png" alt="Institution 3 Logo">
@@ -799,12 +810,54 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section"); // All sections on the page
+    const navLinks = document.querySelectorAll(".navbar ul li a");
+
+    // Function to remove active class from all links
+    const removeActiveClass = () => {
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+        });
+    };
+
+    // Function to add active class based on scroll position
+    const addActiveClass = () => {
+        let currentSection = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+
+            // Check if the section is in view (more than 50% visible)
+            if (window.scrollY + window.innerHeight / 2 >= sectionTop && window.scrollY + window.innerHeight / 2 < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute("id");
+            }
+        });
+
+        removeActiveClass();
+        // Add active class to the corresponding navigation link
+        navLinks.forEach(link => {
+            if (link.getAttribute("href").substring(1) === currentSection) {
+                link.classList.add("active");
+            }
+        });
+    };
+
+    // Listen for the scroll event
+    window.addEventListener("scroll", addActiveClass);
+
+    // Initially add active class when the page loads
+    addActiveClass();
+});
+
+
+
     </script> 
 <footer>
     <div class="footer-left">
         <a href="https://www.linkedin.com/in/smriti-maharjan-/" target="_blank"><i class="fab fa-linkedin social-icon"></i></a>
         <a href="https://www.facebook.com/mhzn.smritee" target="_blank"><i class="fab fa-facebook social-icon"></i></a>
-        <a href="mailto:mhznsmriti@gmail.com" target="_blank"><i class="fa fa-envelope social-icon"></i></a>
+        <a href="mailto:smritimaharjan112@gmail.com" target="_blank"><i class="fa fa-envelope social-icon"></i></a>
     </div>
     <div class="footer-center">
         <p>Made by SM@2025</p>
