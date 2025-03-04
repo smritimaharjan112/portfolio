@@ -16,7 +16,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KSHLS9TW');</script>
 <!-- End Google Tag Manager -->
-
+<!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NRYWYEFKM1"></script>
 <script>
@@ -300,7 +301,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <label for="message">Message</label>
                 <textarea id="message" placeholder="Your Message"></textarea>
             </div>
-            <button type="submit">Send</button>
+            <button id="sendEmailButton" type="button">Send</button>
         </form>
     </section>
 
@@ -384,6 +385,59 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// document.getElementById("sendEmailButton").addEventListener("click", function () {
+//     const name = document.getElementById("name").value;
+//     const email = document.getElementById("email").value;
+//     const message = document.getElementById("message").value;
+
+//     if (!name || !email || !message) {
+//         alert("Please fill out all fields before sending.");
+//         return;
+//     }
+
+//     Email.send({
+//         Host: "smtp.gmail.com",
+//         Username: "smritimaharjan112@gmail.com", // Replace with Smriti's email
+//         Password: "app-password-here", // She'll need to generate an app password
+//         To: "smritimaharjan112@gmail.com", // Where emails should be sent
+//         From: email,
+//         Subject: `Contact form message from ${name}`,
+//         Body: `Name: ${name}<br>Email: ${email}<br>Message:<br>${message}`,
+//     }).then((message) => alert("Email successfully sent!"))
+//     .catch((error) => alert("Failed to send email: " + error.message));
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("Wk-cmPLcspH48HB29"); 
+
+    document.getElementById("sendEmailButton").addEventListener("click", function () {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        if (!name || !email || !message) {
+            alert("Please fill out all fields before sending.");
+            return;
+        }
+
+        // Send the email using EmailJS
+        emailjs.send("service_xk3dfsi", "template_dlsdv2w", {
+            to_name: "Smriti Maharjan",
+            from_name: name,
+            from_email: email,
+            message: message,
+        })
+        .then(() => {
+            alert("Email successfully sent!");
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+        })
+        .catch((error) => {
+            alert("Failed to send email: " + error.text);
+        });
+    });
+});
 
     </script> 
 <footer>
