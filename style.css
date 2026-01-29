@@ -698,6 +698,8 @@ display: flex;
 justify-content: center;
 gap: 20px; /* Space between cards */
 flex-wrap: wrap;
+    margin-bottom: 30px;
+
 }
 
 .experience-card {
@@ -706,7 +708,6 @@ background: #fff;
 padding: 20px;
 border: 1px solid #ddd;
 border-radius: 8px;
-margin-bottom: 30px;
 }
 
 
@@ -928,3 +929,4 @@ button:hover {
         margin-top: 10px;
     }
 }
+
